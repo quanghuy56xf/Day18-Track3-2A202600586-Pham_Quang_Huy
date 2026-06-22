@@ -7,6 +7,8 @@ Usage:
     python main.py
 """
 
+# Import sentence_transformers first to prevent DLL conflicts on Windows
+import sentence_transformers
 import json
 import os
 import time

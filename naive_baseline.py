@@ -5,6 +5,8 @@ Basic = paragraph chunking + dense-only search (không hybrid, không rerank, kh
 Đây là RAG đã học ở buổi trước — hôm nay sẽ cải thiện từng bước.
 """
 
+# Import sentence_transformers first to prevent DLL conflicts on Windows
+import sentence_transformers
 import sys, os, time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

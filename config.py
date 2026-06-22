@@ -7,6 +7,10 @@ load_dotenv()
 
 # --- API Keys ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+if OPENAI_API_KEY and (len(OPENAI_API_KEY) < 40 or "your-key" in OPENAI_API_KEY):
+    print("⚠️ Detected invalid or mock OPENAI_API_KEY. Disabling API calls to run in offline/fallback mode.")
+    OPENAI_API_KEY = ""
+    os.environ["OPENAI_API_KEY"] = ""
 
 # --- Qdrant ---
 QDRANT_HOST = "localhost"
